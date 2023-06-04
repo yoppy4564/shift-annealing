@@ -1,0 +1,16 @@
+num_workers = 4  # 作業員の数 A
+num_days = 30  # スケジューリング対象日の数 D
+num_terms = 3  # 1日のタームの数 T
+
+r = np.random.randint(2, size=(num_workers, num_days, num_terms))  # 作業員がシフトに入れるか否か 
+X = Array.create('X', shape=(num_workers, num_days, num_terms), vartype='BINARY') "計算結果"
+
+Xの場合
+num_days列内にnum_terms分セルを確保しそれぞれのセルにXの第３要素を全て並べて表示する。
+この時Xの値が1なら青色、0なら赤色にしてXの第3要素を表示する
+
+rの場合
+num_days列内にnum_terms分セルを確保しそれぞれのセルにrの第３要素を全て並べて表示する。
+この時rの値が1なら青色、0なら赤色にしてrの第3要素を表示する
+
+この時どちらのテーブルもnum_workers分の行番号とnum_daysを列番号として表示すること
