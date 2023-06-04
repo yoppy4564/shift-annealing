@@ -11,7 +11,7 @@ import matplotlib.colors as mcolors
 num_workers = 4  # 作業員の数 A
 num_days = 30  # スケジューリング対象日の数 D
 num_terms = 3  # 1日のタームの数 T
-num_reads = 10
+num_reads = 10 #試行回数
 
 S = np.ones((num_days, num_terms), dtype=int)  # 必要なブース数
 r = np.random.randint(2, size=(num_workers, num_days, num_terms))  # 作業員のシフトに入れるか否か
