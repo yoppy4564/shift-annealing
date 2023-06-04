@@ -8,15 +8,16 @@ import matplotlib.colors as mcolors
 
 
 # パラメータとデータの設定
-num_workers = 10  # 作業員の数
-num_days = 30  # スケジューリング対象日の数
-num_terms = 4  # 1日のタームの数
+num_workers = 4  # 作業員の数 A
+num_days = 30  # スケジューリング対象日の数 D
+num_terms = 3  # 1日のタームの数 T
 num_reads = 10
 
 S = np.ones((num_days, num_terms), dtype=int)  # 必要なブース数
-# r = np.zeros[num_workers, num_days, num_terms]  # 作業員がタームに割り当て可能かどうか
-R = np.random.randint(low=0,high=num_terms, size=(num_workers, num_days, num_terms))  # 作業員の希望割り当てシフト数
-G = np.random.randint(2, size=(num_workers, num_workers))  # 作業員が同じグループに所属しているかどうか
+r = np.random.randint(2, size=(num_workers, num_days, num_terms))  # 作業員のシフトに入れるか否か
+R = np.ones((num_workers), dtype=int) # 作業員の希望割り当てシフト数
+g = np.random.randint(num_workers)# ランダム生成グループ数
+G = np.random.randint(2, size=(g, num_workers))  # 作業員が同じグループに所属しているかどうか
 
 # 変数の設定
 X = Array.create('X', shape=(num_workers, num_days, num_terms), vartype='BINARY')
